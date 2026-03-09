@@ -31,7 +31,7 @@ class WeatherAPICaller{
             this.location += "/today"
             include += "current,hours";
         }
-        else if(this.timeline === "nextWeek"){
+        else if(this.timeline === "next7days"){
             include += "days";
             this.location += "/tomorrow/next7days";
         }
