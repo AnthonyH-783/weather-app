@@ -71,13 +71,16 @@ body{
     padding: 2rem;
 }
 .loc{
-    grid-area: 1 / 1 / span 1 / span 2;
+    grid-area: 1 / 1 / span 1 / span 3;
+    font-size: 3rem;
 }
 .temp{
     grid-area: 2 / 1 / span 1 / span 2;
+    font-size: 4rem;
 }
 .icon{
     grid-area: 1 / 4 / span 2 / span 2;
+    height: 10rem;
 }
 
 .hourly-grid{
@@ -88,11 +91,37 @@ body{
 .hourly-grid div span{
 
     padding: 1rem 0;
-    
+}
+.gap-1rem{
+    gap: 1rem;
+}
+.gap-2rem{
+    gap:2rem;
+}
+.gap-3rem{
+    gap:3rem;
+}
+.align-start{
+    align-items: start;
+}
+.weekday-icon{
+    width: 2rem;
+    height: 2rem;
 }
 
 .cond-grid{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    gap:2rem;
+    padding-top:1rem;
 }
+
+.forecast{
+    max-width: 40vw;
+}
+
+.weekly-forecast{
+    width: 25vw;
+}
+

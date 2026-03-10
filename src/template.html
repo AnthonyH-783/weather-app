@@ -7,11 +7,11 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container flex-row space-around">
         <form>
             <input type="text" placeholder="Search for cities">
         </form>
-        <div class="forecast flex-row space-around">
+        <div class="forecast flex-col">
             <div class="current-container">
                 <div class="todays-forecast">
                     <h1 class="text-primary loc" id="loc-text">Location</h1>
@@ -84,60 +84,60 @@
             </div>
             <div class="card">
                 <h3>7-day Forecast</h3>
-                <div class="weekly-forecast">
-                    <div class="flex-row space-between">
+                <div class="weekly-forecast flex-col gap-2rem">
+                    <div class="flex-row space-between align-center">
+                    <span class="weekday"></span>
+                        <div class="flex-row align-start justify-center">
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
+                        </div>
+                        <span><span class="max"></span><span class="min"></span></span>
+                    </div>
+                    <div class="flex-row space-between align-center">
                     <span class="weekday"></span>
                         <div>
-                            <img src="#">
-                            <span class="descr"></span>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
                         </div>
                         <span><span class="max"></span><span class="min"></span></span>
                     </div>
                     <div class="flex-row space-between">
                     <span class="weekday"></span>
                         <div>
-                            <img src="#">
-                            <span class="descr"></span>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
+                        </div>
+                        <span><span class="max"></span><span class="min"></span></span>
+                    </div>
+                    <div class="flex-row space-between">
+                    <span class="weekday "></span>
+                        <div>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
                         </div>
                         <span><span class="max"></span><span class="min"></span></span>
                     </div>
                     <div class="flex-row space-between">
                     <span class="weekday"></span>
                         <div>
-                            <img src="#">
-                            <span class="descr"></span>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
                         </div>
                         <span><span class="max"></span><span class="min"></span></span>
                     </div>
                     <div class="flex-row space-between">
                     <span class="weekday"></span>
                         <div>
-                            <img src="#">
-                            <span class="descr"></span>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
                         </div>
                         <span><span class="max"></span><span class="min"></span></span>
                     </div>
                     <div class="flex-row space-between">
                     <span class="weekday"></span>
                         <div>
-                            <img src="#">
-                            <span class="descr"></span>
-                        </div>
-                        <span><span class="max"></span><span class="min"></span></span>
-                    </div>
-                    <div class="flex-row space-between">
-                    <span class="weekday"></span>
-                        <div>
-                            <img src="#">
-                            <span class="descr"></span>
-                        </div>
-                        <span><span class="max"></span><span class="min"></span></span>
-                    </div>
-                    <div class="flex-row space-between">
-                    <span class="weekday"></span>
-                        <div>
-                            <img src="#">
-                            <span class="descr"></span>
+                            <img class="weekday-icon" src="#">
+                            <span class="descr weekday-icon"></span>
                         </div>
                         <span><span class="max"></span><span class="min"></span></span>
                     </div>
