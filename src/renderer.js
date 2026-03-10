@@ -1,4 +1,4 @@
-import {parseJSON, format} from "date-fns";
+import {format} from "date-fns";
 
 
 const ICONS = "./images/icons/";
@@ -19,7 +19,8 @@ export function renderCurrentMainConditions(container, {address, temp, icon}){
     // Using given information for rendering
     location_txt.innerText = address;
     temp_txt.innerText = parseInt(temp) + "°";
-    img.src = "images/icons/" + icon;
+    import(`./images/icons/${icon}.png`).then((module) => img.src = module.default);
+    
 }
 /**
  * 
@@ -41,11 +42,10 @@ export function renderHourlyForecast(container, day, hours){
         const date = new Date(datetime);
         const formated_time = format(date, "h:mm aaaa");
         const temp_txt = parseInt(hours[index].temp) + "°";
-        const icon_url = ICONS + hours.icon;
         // Setting the data;
         time.innerText = formated_time;
         temp.innerText = temp_txt;
-        img.src = icon_url;  
+        import(`./images/icons/${hours[index].icon}.png`).then((module) => img.src = module.default);
     });
 }
 
@@ -68,7 +68,7 @@ export function renderSecondaryConditions(container, data){
      * @param {*} data 
      * data contains datetime (yyyy-mm-dd), tempmax, tempmin, and icon
      */
-     export function renderWeekday(container, data){
+     export async function renderWeekday(container, data){
         // Selecting the dom
         const day_span = container.querySelector(".weekday");
         const img = container.querySelector("img");
@@ -87,10 +87,11 @@ export function renderSecondaryConditions(container, data){
 
         // Modifying the dom
         day_span.innerText = formated_date;
-        img.src = icon_url;
+        
         descr.innerText = descr_txt;
         max_span.innerText = tempmax;
         min_span.innerText = "/" + tempmin;
+        import(`./images/icons/${data.icon}.png`).then((module) => img.src = module.default);
     }
     /**
      * 
