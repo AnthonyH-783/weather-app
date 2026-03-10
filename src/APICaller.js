@@ -11,9 +11,8 @@ class WeatherAPICaller{
         this.location = location;
         this.timeline = timeline;
         this.buildUrl();
-        console.log(this.url);
     }
-
+   
     async call(){
         return await this.fetchWeatherData();
     }

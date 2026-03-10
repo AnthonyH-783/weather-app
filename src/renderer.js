@@ -9,6 +9,18 @@ const ICONS = "./images/icons/";
  * @param {String} temp
  * @param {String} icon
  */
+
+export function renderPage({today_forecast, weekly_forecast, hourly_grid, cond_grid},
+                            {today_data, week_data}){
+    // Extracting currently specific data
+    const {address, temp, icon, date, hours} = today_data;
+    // Rendering each compoent of the page
+    renderCurrentMainConditions(today_forecast, {address, temp, icon});
+    renderHourlyForecast(hourly_grid, date, hours);
+    renderSecondaryConditions(cond_grid, today_data);
+    renderWeek(weekly_forecast, week_data);
+}
+
 export function renderCurrentMainConditions(container, {address, temp, icon}){
     // Concerns div.todays-forecast in template
     // Selecting dom elements to mutate

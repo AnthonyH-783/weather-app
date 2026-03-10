@@ -125,3 +125,11 @@ body{
     width: 25vw;
 }
 
+.error{
+    color: red;
+    display: none;
+}
+
+.active{
+    display: block;
+}
