@@ -1,11 +1,11 @@
 import {WeatherAPICaller} from "./APICaller.js";
 import * as Renderer from "./renderer.js";
 import { FormHandler } from "./formHandler.js";
-
+import { ErrorHandler } from "./errorHandler.js";
 import "./styles.css";
 
 
-window.onload = (evt) => {
+window.onload = () => {
     const today_container = document.querySelector(".current-container");
     const today_forecast = today_container.querySelector(".todays-forecast");
     const hourly_grid = today_container.querySelector(".hourly-grid");
@@ -28,6 +28,8 @@ window.onload = (evt) => {
     const hourly_grid = today_container.querySelector(".hourly-grid");
     const cond_grid = document.querySelector(".cond-grid");
     const weekly_forecast = document.querySelector(".weekly-forecast");
+    const error_dom = form.querySelector(".error");
+    const error_handler = new ErrorHandler(error_dom);
 
     addSubmissionListener();
 
@@ -36,9 +38,17 @@ window.onload = (evt) => {
                 evt.preventDefault();
                 const form_handler = new FormHandler(form);
                 const location = form_handler.input.value;
-                const data = await form_handler.getFullForecast(location);
-                const dom = {form, today_container, today_forecast, hourly_grid, cond_grid, weekly_forecast};
-                Renderer.renderPage(dom, data);
+                try{
+                    const data = await form_handler.getFullForecast(location);
+                    const dom = {form, today_container, today_forecast, hourly_grid, cond_grid, weekly_forecast};
+                    Renderer.renderPage(dom, data);
+                }
+                catch(error){
+                    error_handler.displayError();
+                    console.error(error);
+                }
+                
+
 
 
     });}

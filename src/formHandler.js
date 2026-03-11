@@ -9,7 +9,6 @@ export class FormHandler{
         this.data = null;
         this.error = form.querySelector(".error");
         this.input = form.querySelector("input");
-        this.addSubmissionListener();
 
     }
     async getFullForecast(location){
@@ -18,9 +17,11 @@ export class FormHandler{
             try{
                 const today_data = await current_caller.call();
                 const week_data = await weekly_caller.call();
+                this.error.classList.remove("active");
                 return {today_data, week_data};
             }
             catch(error){
+                this.error.classList.add("active");
                 console.error(error);
             }
     }
