@@ -56,6 +56,7 @@ class WeatherAPICaller{
             }
         }
         catch(error){
+            
             console.log(error);
         }
     

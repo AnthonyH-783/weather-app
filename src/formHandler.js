@@ -18,6 +18,7 @@ export class FormHandler{
                 const today_data = await current_caller.call();
                 const week_data = await weekly_caller.call();
                 this.error.classList.remove("active");
+                this.form.reset();
                 return {today_data, week_data};
             }
             catch(error){
